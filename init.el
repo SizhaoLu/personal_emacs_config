@@ -95,8 +95,9 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;;; Theme
-(use-package modus-themes)
-(load-theme 'modus-vivendi-tinted t)
+(use-package modus-themes
+  :config
+  (load-theme 'modus-vivendi-tinted t))
 
 ;;; Quality of life
 (use-package which-key
