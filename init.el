@@ -95,11 +95,52 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;;; Theme
-(use-package modus-themes
-  :config
-  (load-theme 'modus-vivendi-tinted t))
+(use-package modus-themes)
+(load-theme 'modus-vivendi-tinted t)
 
 ;;; Quality of life
 (use-package which-key
   :config
   (which-key-mode))
+
+
+;;; ============================================================
+;;; Python: LSP, Linting, Autocomplete
+;;; ============================================================
+
+;; In-buffer completion popup (pairs with vertico)
+(use-package corfu
+  :custom
+  (corfu-auto t)
+  (corfu-auto-delay 0.2)
+  (corfu-auto-prefix 2)
+  (corfu-cycle t)
+  :init
+  (global-corfu-mode))
+
+;; Extra completion sources for corfu
+(use-package cape
+  :init
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-keyword))
+
+;; LSP via eglot (built-in Emacs 29+)
+(use-package eglot
+  :ensure t
+  :hook ((python-mode python-ts-mode) . eglot-ensure)
+  :config
+  (add-to-list 'eglot-server-programs
+    `((python-ts-mode python-mode) . ("pyrefly" "lsp"))))
+
+;; Virtual environment auto-detection
+(use-package pet
+  :config
+  (add-hook 'python-mode-hook 'pet-mode))
+
+;; Python mode settings
+(use-package python
+  :hook (python-mode . (lambda ()
+                         (setq indent-tabs-mode nil)
+                         (setq python-indent-offset 4)))
+  :config
+  (setq python-shell-interpreter "python3"))
