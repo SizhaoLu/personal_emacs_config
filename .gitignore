@@ -1,0 +1,58 @@
+# straight.el package manager
+straight/
+
+# Compiled / cached bytecode
+*.elc
+*.eln
+eln-cache/
+
+# Native compilation cache (Emacs 28+)
+.cache/eln/
+
+# Auto-save and backup files
+*~
+\#*\#
+.\#*
+*.bak
+
+# Customization file (often machine-specific; see note below)
+custom.el
+
+# Session/desktop state
+.emacs.desktop
+.emacs.desktop.lock
+
+# Package.el
+elpa/
+
+# Bookmarks (often personal, not config)
+bookmarks
+
+# Abbrev definitions (sometimes personal)
+abbrev_defs
+
+# History / persistence files
+savehist
+recentf
+.lsp-session-v1
+projectile-bookmarks.eld
+
+# Server/socket files
+server/
+
+# Tree-sitter compiled grammars (if you fetch them rather than vendor them)
+tree-sitter/
+
+# Flycheck/Flymake temp files
+flycheck_*.el
+
+# Org mode
+.org-id-locations
+org-clock-save.el
+
+
+# Lock files from various LSP servers / misc tools
+*.log
+
+# macOS cruft (if applicable)
+.DS_Store

@@ -103,10 +103,10 @@
   :config
   (which-key-mode))
 
+;;; indent settings
+(setq css-indent-offset 2)
 
-;;; ============================================================
 ;;; Python: LSP, Linting, Autocomplete
-;;; ============================================================
 
 ;; In-buffer completion popup (pairs with vertico)
 (use-package corfu
