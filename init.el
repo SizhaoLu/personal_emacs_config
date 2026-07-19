@@ -100,6 +100,7 @@
 
 ;;; Quality of life
 (which-key-mode 1)
+(setq which-key-idle-delay 0.5)
 
 ;;; indent settings
 (setq css-indent-offset 2)
