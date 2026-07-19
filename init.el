@@ -99,9 +99,7 @@
 (load-theme 'modus-vivendi-tinted t)
 
 ;;; Quality of life
-(use-package which-key
-  :config
-  (which-key-mode))
+(which-key-mode 1)
 
 ;;; indent settings
 (setq css-indent-offset 2)
