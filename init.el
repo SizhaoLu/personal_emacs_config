@@ -1,3 +1,4 @@
+;;; init.el -*- lexical-binding: t; -*-
 ;;;; SKL .emacs file
 ;;; Sizhao (Kevin) Lu
 ;;; 2024-12-27
